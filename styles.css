@@ -498,3 +498,179 @@ body {
     transform: scale(1.1);
     box-shadow: 0 0 15px rgba(120, 115, 245, 0.7);
 }
+
+@media (max-width: 768px) {
+    body {
+        height: 100dvh;
+        overflow: hidden;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    #container {
+        height: 100dvh;
+        min-height: 100dvh;
+    }
+
+    #canvas-container canvas {
+        display: block;
+        touch-action: none;
+    }
+
+    #ui-panel {
+        top: calc(env(safe-area-inset-top, 0px) + 12px);
+        left: 12px;
+        right: 12px;
+        width: auto;
+        max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 24px);
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    #ui-panel.collapsed {
+        transform: translateX(calc(-100% - 20px));
+    }
+
+    .toggle-panel {
+        top: calc(env(safe-area-inset-top, 0px) + 12px);
+        left: 12px;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+
+    .panel-header {
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+    }
+
+    .panel-title {
+        font-size: 1.15rem;
+    }
+
+    .control-group {
+        margin-bottom: 12px;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .shape-selector {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .shape-btn {
+        min-height: 48px;
+        padding: 10px 8px;
+        border-radius: 10px;
+    }
+
+    .shape-icon {
+        font-size: 1rem;
+    }
+
+    .slider {
+        height: 10px;
+    }
+
+    .slider::-webkit-slider-thumb,
+    #music-progress::-webkit-slider-thumb {
+        width: 24px;
+        height: 24px;
+    }
+
+    .slider-value {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .upload-btn,
+    .start-btn,
+    #play-pause-btn {
+        min-height: 44px;
+    }
+
+    #particle-count {
+        top: calc(env(safe-area-inset-top, 0px) + 14px);
+        left: 50%;
+        max-width: 42vw;
+        padding: 8px 12px;
+        font-size: 0.78rem;
+        white-space: nowrap;
+    }
+
+    .gesture-indicator {
+        top: calc(env(safe-area-inset-top, 0px) + 58px);
+        right: 12px;
+        padding: 8px 10px;
+        gap: 4px;
+    }
+
+    .gesture-icon {
+        font-size: 1.25rem;
+    }
+
+    .gesture-text {
+        font-size: 0.75rem;
+    }
+
+    #camera-container {
+        right: 12px;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 72px);
+        width: 112px;
+        height: 84px;
+        border-radius: 8px;
+    }
+
+    .fullscreen-btn {
+        left: 12px;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
+        width: 44px;
+        height: 44px;
+    }
+
+    .instructions {
+        left: 68px;
+        right: 12px;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
+        transform: none;
+        max-width: none;
+        padding: 10px 12px;
+        font-size: 0.76rem;
+        line-height: 1.45;
+        text-align: left;
+    }
+
+    .status {
+        width: calc(100vw - 32px);
+        padding: 22px 18px;
+        border-radius: 12px;
+    }
+
+    .status h2 {
+        font-size: 1.25rem;
+    }
+
+    .status p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .instructions {
+        display: none;
+    }
+
+    #particle-count {
+        max-width: 50vw;
+    }
+
+    .gesture-indicator {
+        top: calc(env(safe-area-inset-top, 0px) + 12px);
+    }
+
+    #camera-container {
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 62px);
+        width: 96px;
+        height: 72px;
+    }
+}
